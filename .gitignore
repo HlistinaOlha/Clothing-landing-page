@@ -1,0 +1,5 @@
+.idea
+*.css
+!style.css
+!media.css
+!css/vendors/**
