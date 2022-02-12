@@ -33,6 +33,50 @@
   }
 }
 
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+.header-slider {
+  position: relative;
+  height: @middle-header-height;
+}
+
+.header-slider-item {
+  position: relative;
+  left: 17px;
+  bottom: 16px;
+}
+
+.carousel-menu {
+  .absolute();
+  top: 665px;
+  left: 46.4%;
+  .flex-display();
+  list-style-type: none;
+
+  li {
+    width: 18px;
+    height: 18px;
+    .border-radius (50%);
+    background-color: @primary-color;
+    margin-right: 6px;
+
+    button {
+      font-size: 0;
+      color: @primary-color;
+    }
+  }
+}
+
+li.slick-active {
+  background-color: @secondary-color;
+
+  button {
+    color: @secondary-color;
+  }
+}
+
 //page-styles
 html, body {
   .full-width();
@@ -61,13 +105,6 @@ ul, li, li:hover {
   list-style: none;
   .link-text();
 }
-
-.block {
-  display: block;
-  .full-width();
-}
-
-
 
 button, button:focus, input, input:focus {
   outline: none;
@@ -141,12 +178,11 @@ button, button:focus {
 .middle-header {
   .relative();
   height: @middle-header-height;
-  background: #f8f7f3 url("@{img-header}wrapper-slider.jpg") no-repeat center -16px;
 }
 
 .middle-header-box {
-  .relative();
-  left: 54px;
+  .absolute();
+  left: 14.8%;
   top: 283px;
   width: 314px;
   .uppercase();
@@ -193,25 +229,6 @@ button, button:focus {
 
 .confira-link, .confira-link:hover {
   color: @secondary-color;
-}
-
-.carousel-menu {
-  .relative();
-  top: 583px;
-  left: 45.4%;
-  .flex-display();
-}
-
-.carousel-point {
-  width: 18px;
-  height: 18px;
-  .border-radius (50%);
-  background-color: @primary-color;
-  margin-right: 6px;
-}
-
-.carousel-point.active {
-  background-color: @secondary-color;
 }
 
 .pointer {
@@ -379,10 +396,10 @@ button, button:focus {
     display: none;
   }
 
-  &:-ms-input-placeholder{
+  &:-ms-input-placeholder {
     padding: 14px 22px 13px 22px;
     line-height: normal;
-    }
+  }
 }
 
 .links-menu, .links-category a {
@@ -523,7 +540,7 @@ button, button:focus {
   .flex(column, space-between);
 }
 
-.delete-btn,.delete-btn:focus {
+.delete-btn, .delete-btn:focus {
   margin-left: 45px;
   width: 29px;
   height: 28px;
@@ -587,10 +604,6 @@ button, button:focus {
 }
 
 //main-styles
-.main-text, .footer {
-  color: #393939;
-}
-
 .main-text {
   .relative();
   .uppercase();
@@ -598,7 +611,6 @@ button, button:focus {
   line-height: 32px;
   letter-spacing: 0;
   .text-center();
-  //padding-right: 14px;
   margin: 35px 0 47px;
 }
 
@@ -652,21 +664,10 @@ button, button:focus {
   .dark-background();
 }
 
-.arrow-btn-left {
-  margin-right: 9px;
-  margin-bottom: 23px;
-}
-
-.arrow-btn-right {
-  margin-left: -32px;
-  margin-bottom: 24px;
-  z-index: 1;
-}
-
 .pic-gallery {
   .flex(row);
   .align-items(center);
-  width: 1233px;
+  width: 1192px;
   .center-content();
 }
 
@@ -779,8 +780,8 @@ button, button:focus {
 }
 
 .product-item-link:hover::before {
-    .dark-background()
-  }
+  .dark-background()
+}
 
 .product-name, .register-btn {
   font-weight: @semi-bold-font;
@@ -842,10 +843,6 @@ button, button:focus {
   .dark-background();
 }
 
-.main-text, .news a {
-  color: #3A3A3A;
-}
-
 .news {
   margin-top: 71px;
   .flex(row, space-between);
@@ -862,23 +859,36 @@ button, button:focus {
   height: 55px;
   line-height: 60px;
   letter-spacing: 0.15em;
+  color: @primary-color;
+}
 
-  .newsletter-link {
-    color: @primary-color;
-  }
+.main-text, .news-item::placeholder {
+  color: #3A3A3A;
+}
+
+.news-item, .register-btn {
+  .uppercase();
+}
+
+.news-item, .news-item::placeholder {
+  font-weight: @medium-font;
 }
 
 .news-item {
   border: 1px solid rgb(208, 208, 208);
-  width: 379px;
-  height: 52px;
   line-height: 50px;
   padding-left: 2px;
+  .text-center();
+
+  &:-webkit-autofill {
+    -webkit-text-fill-color: #3A3A3A;
+    transition: background-color 5000s ease-in-out 0s;
+  }
 }
 
 .name, .email {
   height: 55px;
-  padding-top: 3px;
+  padding: 3px 20px 0;
 }
 
 .name {
@@ -892,8 +902,9 @@ button, button:focus {
 .register-btn {
   width: 208px;
   height: 55px;
-  padding-left: 2px;
+  padding-left: 8px;
   line-height: 58px;
+  border: none;
   border-bottom: 4px solid #4F5052;
   background: rgba(196, 196, 196, 0.5);
 }

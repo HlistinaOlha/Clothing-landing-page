@@ -1,6 +1,6 @@
 @import "mixins";
 
-@media screen and (max-width: 1270px) {
+@media screen and (max-width: 1320px) {
 
   .bullet-menu {
     position: relative;
@@ -24,12 +24,9 @@
     margin: 0 auto;
   }
 
-  .arrow-btn-left, .arrow-btn-right {
-    .display-none();
-  }
-
   .middle-header-box {
     width: 283px;
+    left: 82px;
   }
 
   .clothing {
@@ -48,10 +45,6 @@
 
   .pic-gallery {
     width: 976px;
-  }
-
-  .arrow-btn-left, .arrow-btn-right {
-    .display-none();
   }
 
   .product-item {
@@ -105,12 +98,13 @@
   .news {
     font-size: 18px;
 
-    & li:not(:last-of-type) {
+    div {
       margin-right: 6px;
     }
   }
 
   .newsletter {
+    background-position-x: -5px;
     width: 231px;
     height: 53px;
   }
@@ -182,7 +176,6 @@
     }
   }
 
-
   .product-menu-item {
 
     & > img {
@@ -217,11 +210,23 @@
 
 @media screen and (max-width: 1023px) {
 
-  .pic-gallery.slide{
+  .pic-gallery.slide {
     .slick-slide[aria-hidden="true"] {
       opacity: 0.5;
     }
+  }
 
+  .header-slider {
+    height: 460px;
+  }
+
+  .header-slider-item {
+    left: 12px;
+    bottom: 2px;
+  }
+
+  .header-slider-img {
+    height: 460px;
   }
 
   .upper-header-wrapper {
@@ -238,24 +243,25 @@
 
   .middle-header {
     height: 460px;
-    background-position: center 0;
-    background-size: 1013px;
   }
 
   .carousel-menu {
-    top: 375px;
-    left: 44.8%;
-  }
+    top: 430px;
+    left: 45%;
 
-  .carousel-point {
-    width: 12px;
-    height: 12px;
-    margin-right: 4px;
+    li {
+      width: 12px;
+      height: 12px;
+
+      &:not(:last-of-type) {
+        margin-right: 4px;
+      }
+    }
   }
 
   .middle-header-box {
     width: 205px;
-    left: 31px;
+    left: 48px;
     top: 173px;
   }
 
@@ -549,7 +555,7 @@
     font-size: 14px;
     line-height: 0;
 
-    & li:not(:last-of-type) {
+    div {
       margin-right: 4px;
     }
   }
@@ -560,15 +566,21 @@
     padding-right: 2px;
     letter-spacing: 0.1em;
     line-height: 31px;
+    background-position-x: 0;
   }
 
-  .discount-percent, .news-item, .main-text {
+  .name::placeholder {
+    font-size: 17px;
+    padding-right: 19px;
+  }
+
+  .email::placeholder {
+    font-size: 16px;
+    padding: 0 41px;
+  }
+
+  .discount-percent, .main-text {
     line-height: 23px;
-  }
-
-  .name {
-    padding-right: 20px;
-    letter-spacing: 0.12em;
   }
 
   .email {
@@ -579,6 +591,8 @@
   .name, .email {
     width: 225px;
     height: 32px;
+    letter-spacing: -0.01em;
+    font-size: 17px;
     line-height: @line-height-24px;
     border-width: 2px;
   }
@@ -588,7 +602,7 @@
     height: 32px;
     line-height: 32px;
     letter-spacing: 0.08em;
-    padding-right: 6px;
+    padding-right: 12px;
   }
 
   .footer {
@@ -683,13 +697,11 @@
 
 @media screen and (max-width: 767px) {
 
-
-  .slide-celeb-menu{
+  .slide-celeb-menu {
     .slick-slide[aria-hidden="true"] {
       opacity: 0.5;
     }
   }
-
 
   .upper-header-wrapper {
     height: 20px;
@@ -707,17 +719,36 @@
     letter-spacing: 0.06em;
   }
 
+  .header-slider, .middle-header, .header-slider-img{
+    height: 195px;
+  }
+
+  .header-slider-item{
+    width: 465px;
+  }
+
+  .header-slider-img{
+    width: 100%;
+  }
+
   .middle-header {
     top: 49px;
-    height: 195px;
     background-position: center -9px;
     background-size: 450px;
   }
 
   .middle-header-box {
     width: 105px;
-    left: 0;
+    left: 4%;
     top: 57px;
+  }
+
+  .carousel-menu {
+    top: 174px;
+
+    li:not(.slick-active){
+      border: 1px solid #C5C5C5;
+    }
   }
 
   .clothing {
@@ -742,14 +773,7 @@
     left: 14px;
   }
 
-  .carousel-menu {
-    top: 140px;
-    left: 36.8%;
-  }
 
-  .carousel-point:not(.active) {
-    border: 1px solid #C5C5C5;
-  }
 
   .bottom-header {
     .absolute();
@@ -943,7 +967,9 @@
     flex-direction: column;
     margin-top: 30px;
 
-    li:not(:last-of-type) {
+    div {
+      display: block;
+      .full-width();
       margin: 0 0 5px 0;
     }
   }
@@ -960,27 +986,36 @@
     line-height: 42px;
   }
 
-  .name, .email {
-    line-height: 33px;
-  }
-
-  .name {
-    padding-right: 2px;
-  }
-
-  .email {
-    letter-spacing: 0.01em;
-    padding-left: 0;
-  }
-
-  .register-btn-link {
-    color: #FFFFFF;
-    line-height: 43px;
+  .news-item, .news-item::placeholder {
+    font-size: @font-size-20px;
   }
 
   .news .news-item {
     border-color: #000000;
   }
+
+  .name, .email {
+    line-height: 33px;
+    font-size: @font-size-20px;
+  }
+
+  .name::placeholder {
+    padding-right: 0;
+  }
+
+  .email {
+    letter-spacing: 0.01em;
+
+    &::placeholder {
+      padding-right: 31px;
+    }
+  }
+
+  .register-btn {
+    color: #FFFFFF;
+    line-height: 43px;
+  }
+
 
   .footer {
     margin-top: 52px;
@@ -1085,8 +1120,8 @@
   .add-btn, .remove-btn, .add-btn:focus, .remove-btn:focus {
     width: 19px;
 
-    & img{
-      width:87%;
+    & img {
+      width: 87%;
     }
   }
 
@@ -1131,4 +1166,20 @@
     }
   }
 }
+
+@media screen and (max-width: 490px){
+
+  .carousel-menu{
+    left: 41%;
+  }
+}
+
+@media screen and (max-width: 360px){
+
+  .carousel-menu{
+    left: 38%;
+  }
+}
+
+
 

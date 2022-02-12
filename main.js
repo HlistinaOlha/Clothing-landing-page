@@ -37,13 +37,94 @@ $(document).ready(function () {
         }
     }
 
+    $('.header-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        autoplay: false,
+        centerMode: true,
+        draggable: true,
+        variableWidth: true,
+        swipe: true,
+        swipeToSlide: true,
+        touchMove: true,
+        arrows:false,
+        dots: true,
+        dotsClass: 'carousel-menu',
+    })
+
+    $('.slide').slick({
+
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        infinite: true,
+        autoplay: false,
+        centerMode: false,
+        draggable: false,
+        variableWidth: true,
+
+        responsive: [
+            {
+                breakpoint: 1270,
+                settings: {
+                    slidesToShow: 5,
+                }
+
+            }, {
+                breakpoint: 1023,
+                settings: {
+                    slidesToShow: 5,
+                    centerMode: true,
+                    draggable: true,
+                    swipe: true,
+                    swipeToSlide: true,
+                    touchMove: true,
+                }
+
+            },
+            {
+                breakpoint: 786,
+                settings: {
+                    slidesToShow: 3,
+                    centerMode: true,
+                    draggable: true,
+                    swipe: true,
+                    swipeToSlide: true,
+                    touchMove: true,
+                }
+
+            },{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    centerMode: true,
+                    draggable: true,
+                    swipe: true,
+                    swipeToSlide: true,
+                    touchMove: true,
+                    centerPadding: '49%',
+                }
+
+            }, {
+                breakpoint: 470,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: true,
+                    draggable: true,
+                    swipe: true,
+                    swipeToSlide: true,
+                    touchMove: true,
+                    centerPadding: '49%',
+                }
+            }]
+    });
+
     $('.slide-insta-menu').slick({
         slidesToShow: 5,
         slidesToScroll: 1,
         infinite: true,
         autoplay: false,
         centerMode: false,
-        draggable: false,
         variableWidth: true,
 
         responsive: [
@@ -149,58 +230,5 @@ $(document).ready(function () {
             }]
     })
 
-    $('.slide').slick({
 
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        infinite: true,
-        autoplay: false,
-        centerMode: false,
-        draggable: false,
-        variableWidth: true,
-
-        responsive: [
-            {
-                breakpoint: 1270,
-                settings: {
-                    slidesToShow: 5,
-                }
-
-            }, {
-                breakpoint: 1023,
-                settings: {
-                    slidesToShow: 5,
-                    centerMode: true,
-                    draggable: true,
-                    swipe: true,
-                    swipeToSlide: true,
-                    touchMove: true,
-                    centerPadding: '50%',
-                }
-
-            }, {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 3,
-                    centerMode: true,
-                    draggable: true,
-                    swipe: true,
-                    swipeToSlide: true,
-                    touchMove: true,
-                    centerPadding: '49%',
-                }
-
-            }, {
-                breakpoint: 470,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: true,
-                    draggable: true,
-                    swipe: true,
-                    swipeToSlide: true,
-                    touchMove: true,
-                    centerPadding: '49%',
-                }
-            }]
-    });
 });

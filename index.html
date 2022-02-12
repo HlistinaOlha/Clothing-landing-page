@@ -30,7 +30,23 @@
             </div>
         </div>
         <div class="middle-header">
-            <div class="content-wrapper">
+            <div class="header-slider">
+                <div class="header-slider-item">
+                    <img class="header-slider-img" src="images/header/wrapper-slider.jpg" alt="a man">
+                </div>
+                <div class="header-slider-item">
+                    <img class="header-slider-img" src="images/header/wrapper-slider.jpg" alt="a man">
+                </div>
+                <div class="header-slider-item">
+                    <img class="header-slider-img" src="images/header/wrapper-slider.jpg" alt="a man">
+                </div>
+                <div class="header-slider-item">
+                    <img class="header-slider-img" src="images/header/wrapper-slider.jpg" alt="a man">
+                </div>
+                <div class="header-slider-item">
+                    <img class="header-slider-img" src="images/header/wrapper-slider.jpg" alt="a man">
+                </div>
+            </div>
                 <div class="middle-header-box">
                     <div class="clothing"><span class="bold">c&f</span> <span class="clothing-word">clothing</span>
                     </div>
@@ -43,14 +59,6 @@
                         <a href="#" class="confira-link">Confira</a>
                     </div>
                 </div>
-                <div class="carousel-menu">
-                    <div class="carousel-point pointer"></div>
-                    <div class="carousel-point pointer"></div>
-                    <div class="carousel-point pointer active"></div>
-                    <div class="carousel-point pointer"></div>
-                    <div class="carousel-point pointer"></div>
-                </div>
-            </div>
         </div>
         <div class="bottom-header">
             <div class="bottom-header-wrapper content-wrapper">
@@ -262,9 +270,6 @@
             </div>
         </div>
         <div class="pic-gallery ">
-            <button id="prev" class="arrow-btn-left pointer" type="button">
-                <img src="images/main/arrow-left_.png" alt="arrow button left">
-            </button>
             <div class="pic-gallery slide">
                 <div class="pic-item-menu">
                     <div class="pic-item pointer">
@@ -331,9 +336,6 @@
                     </div>
                 </div>
             </div>
-            <button id="next" class="arrow-btn-right pointer" type="button">
-                <img src="images/main/arrow-right_.png" alt="arrow-button-right">
-            </button>
         </div>
         <div class="content-wrapper main-wrapper">
             <div class="icon-division"><img src="images/main/divisoria.png" alt=""></div>
@@ -428,13 +430,18 @@
             </div>
         </div>
         <div class="main-wrapper">
-            <ul class="news">
-                <li class="newsletter pointer"><a class="newsletter-link block" href="#">newsletter</a></li>
-                <li class="news-item name pointer"><a class="name-link block" href="#">nome</a></li>
-                <li class="news-item email pointer"><a class="email-link block" href="#">endereco de email</a></li>
-                <li class="register-btn pointer"><a class="register-btn-link block" href="#">cadastrar</a>
-                </li>
-            </ul>
+            <form class="news">
+                <div class="newsletter">newsletter</div>
+                <div>
+                    <label for="user-name" class="visually-hidden">Name</label>
+                    <input type="text" id="user-name" class="news-item name" placeholder="nome">
+                </div>
+                <div>
+                    <label for="email" class="visually-hidden">Email</label>
+                    <input type="email" id="email" class="news-item email" placeholder="endereco de email">
+                </div>
+                <input type="submit" class="register-btn pointer" value="cadastrar">
+            </form>
         </div>
     </main>
     <footer class="footer">
